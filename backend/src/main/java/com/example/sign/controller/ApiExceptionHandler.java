@@ -18,6 +18,7 @@ public class ApiExceptionHandler {
         for (FieldError error : ex.getBindingResult().getFieldErrors()) {
             fields.put(error.getField(), error.getDefaultMessage());
         }
+        // 构建返回结果
         Map<String, Object> result = new HashMap<>();
         result.put("message", "参数校验失败");
         result.put("errors", fields);
